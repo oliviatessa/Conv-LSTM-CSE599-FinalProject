@@ -81,7 +81,7 @@ Within SuperSegger, there is a function that allows us to normalize the cell cyc
 ### Final Data used in network
 Our final pre-processed data is comprised of samples each containg the padded images for each stage of the cell-cycle. More specifically, the input to the network is a pytorch tensor containing (bath_size, seq, channels, height, width)
 
-As the cell images are not oriented in any particular way 
+As the cell images are not oriented in any particular way after the segmentation, we can freely flip them verically or horizonatlly at each time step (as long as were consistent over a given cell) to generate more training data. This allows us to quadruple our data easily without having to preprocess additional training data. 
 
 ## Our Network
 
