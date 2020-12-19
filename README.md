@@ -23,19 +23,21 @@ It has been observed that the proteins within E.coli exhibit time dependent stru
 
 The data used in this project is part of a publicly available set of 
 
-The images in were segmented using the SuperSegger[[2]](#2) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. 
+The images in were segmented using the SuperSegger[[2]](#2) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. This software allows us to not only automatically segment the i   
 
 
-![Celltower1](cited_images/ftszexample.png)  *Fig. 1: FtsZ*   ![Celltower1](cited_images/example1.png) 
+![SeggerCycle](cited_images/seggerlifetime.jpeg)
+* Example of automatic cell segmentation performed by SuperSegger [[2]](#2)*
 
- 
-![Celltower1](cited_images/example1.png)  ![Celltower2](cited_images/example2.png)
+![SeggerExample](cited_images/superseggerexample.jpg)
+* Single-cell lifecycle tracking over time [[2]](#2)*
 
 
-<figure>
-  <img src="cited_images/example1.png" alt="Caption text">
-  <figcaption>Caption text</figcaption>
-</figure>
+
+
+![Celltower3](cited_images/ftszexample.png)  ![Celltower1](cited_images/example1.png)   ![Celltower2](cited_images/example2.png)
+
+
 
 
 ### Data Preprocessing
