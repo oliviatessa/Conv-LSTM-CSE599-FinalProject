@@ -25,24 +25,24 @@ These are all potentially interesting problems, but due to the complexity inhere
 
 ## Background on ConvLSTM
 
-The convolutional LSTM, first proposed in [1], uses convolutional operations instead of normal matrix operations in a LSTM recurrent network to capture both temporal and spatial dependencies in data. This algorithm has been used in video analysis, as well as in rainfall forecasting [1] and biological age prediction [[5]](#5). 
+The convolutional LSTM, first proposed in [[3]](#3), uses convolutional operations instead of normal matrix operations in a LSTM recurrent network to capture both temporal and spatial dependencies in data. This algorithm has been used in video analysis, as well as in rainfall forecasting [[3]](#3) and biological age prediction [[5]](#5). 
 
 In this application, we adapt the pytorch convolutional LSTM implementation developed by https://raw.githubusercontent.com/ndrplz/ConvLSTM_pytorch/master/convlstm.py (ndrplz) to analyze time-dependent cell lifecycles. 
 
 <img src="cited_images/lstm.jpeg" height="200">  <img src="cited_images/lstm_eqs.jpeg" height="150">     
 
-**Figure 2:** Visual Representation of LSTM and associated equaions
+**Figure 2:** Visual Representation of LSTM [[4]](#4) and associated equaions [[3]](#3).
 
 <img src="cited_images/conv.jpeg" height="400">
 
 **Figure 3:** Visualization of Convolutional Neural Network
 
 
-The ConvLSTM uses the same gating structure as a regular LSTM, but includes convolutional operations rather than regular matrix operations. This feature allows the convolutional LSTM to learn both temporal and spatial relationships in the data. Figure X shows a visualization of the ConvLSTM, as well as the euations associated with calculations done in the cell state. Notice the equations are identitical to the regular LSTM equations show in Figure X, except for the convolutional operations (denoted by *). 
+The ConvLSTM uses the same gating structure as a regular LSTM, but includes convolutional operations rather than regular matrix operations. This feature allows the convolutional LSTM to learn both temporal and spatial relationships in the data. Figure 4 shows a visualization of the ConvLSTM, as well as the equations associated with calculations done in the cell state. Notice the equations are identitical to the regular LSTM equations show in Figure 3, except for the convolutional operations (denoted by *). 
 
 <img src="cited_images/convlstm.jpeg" height="300"> <img src="cited_images/convlstm_eqs.jpeg" height="150">
 
-**Figure 4:** Visual Representation of Convolution LSTM and associated equations. 
+**Figure 4:** Visual Representation of Convolution LSTM [[4]](#4) and associated equations [[3]](#3). 
 
 
 
@@ -72,7 +72,7 @@ Notice the difference in frame count (due to differences in lifespane) as well a
 ### Data Preprocessing
 Within SuperSegger, there is a function that allows us to normalize the cell cycle as shown in Figure 7. This function allows us to standardize our dataset by mapping all cells to a standard cycle length with the same size for each step in the cycle. We apply this to all the cells in our data-set to eliminate the variance introduced by having cells of differing size, shape, and lifespan, thus allowing the network to "focus" on the internal dynamics of the cell. 
 
-<img src="cited_images/cyclenormalization.jpg" height="200">
+<img src="cited_images/cyclenormalization.jpg" height="400">
 
 
 **Figure 7:** Consensus tower normalizes cell shape, size, and lifecycle-length
@@ -106,7 +106,7 @@ As the cell images are not oriented in any particular way after the segmentation
 
 ## Results
 
-We used the mean-squared error and root-mean-squared error for the loss functions for two different experiments. The loss curves and a sample output are shown in Figure X for the mean-squared error experiment. The network is picking up on the most defined feature in the dataset, the outline of the cell. The more subtle features, such as the in the interior of the cell, are not learned by the network (See Figure (TOWER) for comparison). 
+We used the mean-squared error and root-mean-squared error for the loss functions for two different experiments. The training and validation loss curves are shown in Figure 8 for the mean-squared error experiment. The network is picking up on the most defined feature in the dataset, the outline of the cell (see Figure 11), and although the network converges to a solution, it is not very meaningful. The more subtle features, such as the in the interior of the cell, are not learned by the network (See Figure 10 for comparison). 
 
 <img src="cited_images/learncurve2.png" height="400">
 
@@ -117,7 +117,7 @@ We used the mean-squared error and root-mean-squared error for the loss function
 
 **Figure 9:** Learning curve for rMSE loss
 
-We then decided to train using a root-mean-squared loss function, aiming to punish high errors more aggressively. Our results show that this change did not improve the prediction capability of the network greatly, see Figure X. 
+We then decided to train using a root-mean-squared loss function, aiming to punish high errors more aggressively. Our results show that this change did not improve the prediction capability of the network greatly, see Figure 9. 
 
 
 <img src="cited_images/tower_bad.png" height="400">
@@ -159,7 +159,6 @@ https://papers.nips.cc/paper/2015/file/07563a3fe3bbe7e3ba84431ad9d055af-Paper.pd
 
 <a id="4">[4]</a> 
 https://medium.com/neuronio/an-introduction-to-convlstm-55c9025563a7
-
 
 <a id="5">[5]</a> 
 Rahman, S.A., Adjeroh, D.A. Deep Learning using Convolutional LSTM estimates Biological Age from Physical Activity. Sci Rep 9, 11425 (2019). https://doi.org/10.1038/s41598-019-46850-0
