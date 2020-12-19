@@ -43,7 +43,7 @@ In this application, we adapt the pytorch convolutional LSTM implementation deve
 
 The ConvLSTM uses the same gating structure as a regular LSTM, but includes convolutional operations rather than regular matrix operations. This feature allows the convolutional LSTM to learn both temporal and spatial relationships in the data. Figure X shows a visualization of the ConvLSTM, as well as the euations associated with calculations done in the cell state. Notice the equations are identitical to the regular LSTM equations show in Figure X, except for the convolutional operations (denoted by *). 
 
-<img src="cited_images/convlstm.jpeg" height="400"> <img src="cited_images/convlstm_eqs.jpeg" height="120">
+<img src="cited_images/convlstm.jpeg" height="200"> <img src="cited_images/convlstm_eqs.jpeg" height="150">
 
 **Figure :** Visual Representation of Convolution LSTM and associated equations. 
 
