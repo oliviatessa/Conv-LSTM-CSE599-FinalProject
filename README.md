@@ -7,7 +7,9 @@ It has been observed that the proteins within E.coli exhibit time dependent stru
 
 
 
-![SeggerExample](cited_images/time_dependence_ex.jpg)  <br />
+
+<img src="cited_images/time_dependence_ex.jpg" height="200">  <img src="cited_images/time_dependence_ex copy.jpg" height="200">     
+
 **Figure 1:** Demonstation of structured protein localization dynamics[[1]](#1)
 
 
@@ -21,6 +23,20 @@ It has been observed that the proteins within E.coli exhibit time dependent stru
 ## what is next frame prediction, how does it work?
 
 ### Background on ConvLSTM
+
+<img src="cited_images/lstm.jpeg" height="200">  <img src="cited_images/lstm_eqs.jpeg" height="200">     
+
+**Figure :** 
+
+<img src="cited_images/conv.jpeg" height="400">
+
+**Figure :** 
+
+
+<img src="cited_images/convlstm.jpeg" height="400">  <img src="cited_images/convlstm_eqs.jpeg" height="180">
+
+**Figure :** 
+
 
 ## More detailed problem overview 
 
@@ -54,10 +70,6 @@ Do this to make it easier for network to learn the thing we actually care about,
 
 ### Final Data used in network
 Our final pre-processed data is comprised of samples each containg the padded images for each stage of the cell-cycle. More specifically, the input to the network is a pytorch tensor containing (bath_size, seq, channels, height, width)
-
-
-![finaldatafr1](aska1aN/xy01Cell0000416/Cell0000416_frame_1.png)
-**Figure:** Final data
 
 
 
