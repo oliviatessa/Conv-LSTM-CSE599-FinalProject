@@ -3,18 +3,17 @@ CSE 599 Final Project - Olivia Thomas and Daniela Koch
 
 ## Protein Localization Dynamics in E.coli
 
-It has been observed that the proteins within E.coli exhibit time dependent structure. This can be seen clearly in Figure 1 below, which shows the average position of a protein
+It has been observed that the proteins within E.coli exhibit time dependent structure. Some of these proteins have been studied in detail, and it has been found that the observed temporal structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to those of proteins with known functions. 
+
+This can be seen clearly in Figure 1 below, which shows the average position of a protein
 
 
 <img src="cited_images/time_dependence_ex.jpg" height="200">  <img src="cited_images/time_dependence_ex copy.jpg" height="200">     
 
 **Figure 1:** Demonstation of structured protein localization dynamics[[1]](#1)
 
-
-Some of these proteins have been studied in detail, and it has been found that the observed structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to those of proteins with known functions.
-
-
-**Figure 1:** Demonstation of structured protein localization dynamics[[1]](#1)
+### Our goal
+As we see from Figure 1, there is distinct temporal structure in the localization of a given protein throughout the cell cycle. However, those images above are the consensus images across an entire dataset of the same protein, so what we are interested in now is seeing if we can predict the dynamics of protein localization on a single-cell basis. 
 
 
 
@@ -58,11 +57,12 @@ The data used in this project is part of a publicly available set of
 
 The images in were segmented using the SuperSegger[[2]](#2) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. This software allows us to not only automatically segment the i   
 
+<img src="cited_images/seggerLifetime.jpg" height="300">
 
-![SeggerCycle](cited_images/seggerLifetime.jpeg)
 **Figure :** Example of automatic cell segmentation performed by SuperSegger [[2]](#2)*
 
-![SeggerExample1](cited_images/superseggerexample.jpg)
+<img src="cited_images/superseggerexample.jpg" height="300">
+
 **Figure :** Single-cell lifecycle tracking over time [[2]](#2)*
 
 After all the segmentation, we get images like these.
@@ -75,7 +75,8 @@ Do this to make it easier for network to learn the thing we actually care about,
 
 -normalizing the cell cycle (size of cell and number of stages in cycle)
 
-![SeggerExampleNorm](cited_images/cyclenormalization.jpg)
+<img src="cited_images/cyclenormalization.jpg" height="200">
+
 **Figure :** Consensus tower normalizes cell shape, size, and lifecycle-length
 
 
@@ -107,10 +108,16 @@ Kuwada, N.J., Traxler, B. and Wiggins, P.A. (2015), Protein localization dynamic
 <a id="1">[2]</a> 
 Stylianidou, S., Brennan, C., Nissen, S.B., Kuwada, N.J. and Wiggins, P.A. (2016), SuperSegger: robust image segmentation, analysis and lineage tracking of bacterial cells. Molecular Microbiology, 102: 690-700. https://doi.org/10.1111/mmi.13486
 
+<a id="3">[3]</a> 
 https://papers.nips.cc/paper/2015/file/07563a3fe3bbe7e3ba84431ad9d055af-Paper.pdf
 
+
+<a id="4">[4]</a> 
 https://medium.com/neuronio/an-introduction-to-convlstm-55c9025563a7
 
-https://www.nature.com/articles/s41598-019-46850-0
 
+<a id="5">[5]</a> 
+Rahman, S.A., Adjeroh, D.A. Deep Learning using Convolutional LSTM estimates Biological Age from Physical Activity. Sci Rep 9, 11425 (2019). https://doi.org/10.1038/s41598-019-46850-0
+
+<a id="6">[6]</a> 
 https://raw.githubusercontent.com/ndrplz/ConvLSTM_pytorch/master/convlstm.py
