@@ -33,10 +33,10 @@ The images in were segmented using the SuperSegger[[2]](#2) software created by 
 
 
 ![SeggerCycle](cited_images/seggerLifetime.jpeg)
-* Example of automatic cell segmentation performed by SuperSegger [[2]](#2)*
+**Figure :** Example of automatic cell segmentation performed by SuperSegger [[2]](#2)*
 
 ![SeggerExample1](cited_images/superseggerexample.jpg)
-* Single-cell lifecycle tracking over time [[2]](#2)*
+**Figure :** Single-cell lifecycle tracking over time [[2]](#2)*
 
 After all the segmentation, we get images like these.
 
@@ -49,7 +49,7 @@ Do this to make it easier for network to learn the thing we actually care about,
 -normalizing the cell cycle (size of cell and number of stages in cycle)
 
 ![SeggerExampleNorm](cited_images/cyclenormalization.jpg)
-
+**Figure :** Consensus tower normalizes cell shape, size, and lifecycle-length
 
 
 ### Final Data used in network
@@ -57,7 +57,7 @@ Our final pre-processed data is comprised of samples each containg the padded im
 
 
 ![finaldatafr1](aska1aN/xy01Cell0000416/Cell0000416_frame_1.png)
-* Final data*
+**Figure:** Final data
 
 
 
