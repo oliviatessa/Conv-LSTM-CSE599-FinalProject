@@ -1,14 +1,18 @@
-# Next-Frame Prediction using ConvolutionalLSTM
+# Next-Frame Prediction using Convolutional LSTM
 CSE 599 Final Project - Olivia Thomas and Daniela Koch
 
-## background on cell stuff
+## Protein Localization Dynamics in E.coli
 
-It has been observed that the proteins within E.coli exhibit time dependent structure.  Some of these proteins have been studied in detail, and it has been found that the observed structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to thoseof proteins with known functions.
-
-
+It has been observed that the proteins within E.coli exhibit time dependent structure. This can be seen clearly in Figure 1 below, which shows the average position of a protein
 
 
 <img src="cited_images/time_dependence_ex.jpg" height="200">  <img src="cited_images/time_dependence_ex copy.jpg" height="200">     
+
+**Figure 1:** Demonstation of structured protein localization dynamics[[1]](#1)
+
+
+Some of these proteins have been studied in detail, and it has been found that the observed structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to those of proteins with known functions.
+
 
 **Figure 1:** Demonstation of structured protein localization dynamics[[1]](#1)
 
