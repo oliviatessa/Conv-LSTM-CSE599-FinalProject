@@ -6,6 +6,13 @@ CSE 599 Final Project - Olivia Thomas and Daniela Koch
 It has been observed that the proteins within E.coli exhibit time dependent structure.  Some of these proteins have been studied in detail, and it has been found that the observed structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to thoseof proteins with known functions.
 
 
+
+
+![SeggerExample](cited_images/time_dependence_ex.jpg)
+* Demonstation of structured protein localization dynamics[[1]](#1)*
+
+
+
 - show example of consensus time dependence, now interested in single cell stuff, which is why we are interested in doing this with neual networks
 - can we predict cell death? 
 - can we predict mutations? 
@@ -25,7 +32,7 @@ The data used in this project is part of a publicly available set of
 The images in were segmented using the SuperSegger[[2]](#2) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. This software allows us to not only automatically segment the i   
 
 
-![SeggerCycle](cited_images/seggerlifetime.jpeg)
+![SeggerCycle](cited_images/seggerLifetime.jpeg)
 * Example of automatic cell segmentation performed by SuperSegger [[2]](#2)*
 
 ![SeggerExample](cited_images/superseggerexample.jpg)
@@ -41,12 +48,17 @@ Do this to make it easier for network to learn the thing we actually care about,
 
 -normalizing the cell cycle (size of cell and number of stages in cycle)
 
-![SeggerExampleNorm](cited_images/cyclenormalization.jpg)
-* Normalizing cell-cycle for better comparison [[1]](#1)*
+![SeggerExampleNorm](cited_images/xy01Cell0000416/Cell0000416_frame_1.png)
+
 
 
 ### Final Data used in network
 Our final pre-processed data is comprised of samples each containg the padded images for each stage of the cell-cycle. More specifically, the input to the network is a pytorch tensor containing (bath_size, seq, channels, height, width)
+
+
+![SeggerExample](askadata3bN/.jpg)
+* Normalizing cell-cycle for better comparison [[1]](#1)*
+
 
 
 ## Our Network
