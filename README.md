@@ -13,8 +13,7 @@ This can be seen clearly in Figure 1 below, which shows the average position of 
 **Figure 1:** Demonstation of structured protein localization dynamics[[1]](#1)
 
 ### Our goal
-As we see from Figure 1, there is distinct temporal structure in the localization of a given protein throughout the cell cycle. However, those images above are the consensus images across an entire dataset of the same protein, so what we are interested in now is seeing if we can predict the dynamics of protein localization on a single-cell basis. 
-
+As we see from Figure 1, there is distinct temporal structure in the average localization of a given protein throughout the cell cycle. However, those images above are the consensus images across an entire dataset of the same protein, so what we are interested in now is seeing if we can predict the dynamics of protein localization on a single-cell basis. 
 
 
 
@@ -27,24 +26,24 @@ As we see from Figure 1, there is distinct temporal structure in the localizatio
 
 ### Background on ConvLSTM
 
-The convolutional LSTM, first proposed in [1], uses convolutional operations instead of normal matrix operations in a LSTM recurrent network to capture both temporal and spatial dependencies in data. This algorithm has been used in video analysis, as well as in rainfall forecasting [1] and biological age prediction [Nature]. 
+The convolutional LSTM, first proposed in [1], uses convolutional operations instead of normal matrix operations in a LSTM recurrent network to capture both temporal and spatial dependencies in data. This algorithm has been used in video analysis, as well as in rainfall forecasting [1] and biological age prediction [[5]](#5). 
 
 In this application, we adapt the pytorch convolutional LSTM implementation developed by https://raw.githubusercontent.com/ndrplz/ConvLSTM_pytorch/master/convlstm.py (ndrplz) to analyze time-dependent cell lifecycles. 
 
 <img src="cited_images/lstm.jpeg" height="200">  <img src="cited_images/lstm_eqs.jpeg" height="150">     
 
-**Figure :** Visual Representation of LSTM and associated equaions
+**Figure 2:** Visual Representation of LSTM and associated equaions
 
 <img src="cited_images/conv.jpeg" height="400">
 
-**Figure :** Visualization of Convolutional Neural Network
+**Figure 3:** Visualization of Convolutional Neural Network
 
 
 The ConvLSTM uses the same gating structure as a regular LSTM, but includes convolutional operations rather than regular matrix operations. This feature allows the convolutional LSTM to learn both temporal and spatial relationships in the data. Figure X shows a visualization of the ConvLSTM, as well as the euations associated with calculations done in the cell state. Notice the equations are identitical to the regular LSTM equations show in Figure X, except for the convolutional operations (denoted by *). 
 
 <img src="cited_images/convlstm.jpeg" height="300"> <img src="cited_images/convlstm_eqs.jpeg" height="150">
 
-**Figure :** Visual Representation of Convolution LSTM and associated equations. 
+**Figure 4:** Visual Representation of Convolution LSTM and associated equations. 
 
 
 
@@ -57,27 +56,27 @@ The data used in this project is part of a publicly available set of
 
 The images in were segmented using the SuperSegger[[2]](#2) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. This software allows us to not only automatically segment the i   
 
-<img src="cited_images/seggerLifetime.jpg" height="300">
+<img src="cited_images/seggerLifetime.jpg" height="500">
 
-**Figure :** Example of automatic cell segmentation performed by SuperSegger [[2]](#2)*
+**Figure 5:** Example of automatic cell segmentation performed by SuperSegger [[2]](#2)*
 
-<img src="cited_images/superseggerexample.jpg" height="300">
+<img src="cited_images/superseggerexample.jpg" height="500">
 
-**Figure :** Single-cell lifecycle tracking over time [[2]](#2)*
+**Figure 6:** Single-cell lifecycle tracking over time [[2]](#2)*
 
-After all the segmentation, we get images like these.
 
+After all the segmentation, we get images such as the following.
 ![Celltower3](cited_images/ftszexample.png)  ![Celltower1](cited_images/example1.png)   ![Celltower2](cited_images/example2.png)
 
-### Data Preprocessing
-After segmentation (make all lifecycles same length, cells same size, etc)
-Do this to make it easier for network to learn the thing we actually care about, which is the internal dynamics 
+Notice the difference in frame count (due to differences in lifespane) as well as the variance in shape and size. In this particular problem we are not interested in these parameters so we implement some data-preprocessing to eliminate these variables from the data.
 
--normalizing the cell cycle (size of cell and number of stages in cycle)
+### Data Preprocessing
+Within SuperSegger, there is a function that allows us to normalize the cell cycle as shown in Figure 7. This function allows us to standardize our dataset by mapping all cells to a standard cycle length with the same size for each step in the cycle. We apply this to all the cells in our data-set to eliminate the variance introduced by having cells of differing size, shape, and lifespan, thus allowing the network to "focus" on the internal dynamics of the cell. 
 
 <img src="cited_images/cyclenormalization.jpg" height="200">
 
-**Figure :** Consensus tower normalizes cell shape, size, and lifecycle-length
+
+**Figure 7:** Consensus tower normalizes cell shape, size, and lifecycle-length
 
 
 ### Final Data used in network
@@ -112,24 +111,24 @@ We used the mean-squared error and root-mean-squared error for the loss function
 
 <img src="cited_images/learncurve2.png" height="400">
 
-**Figure:** Learning curve for MSE loss
+**Figure 8:** Learning curve for MSE loss
 
 
 <img src="cited_images/learncurve_root.png" height="400">
 
-**Figure:** Learning curve for rMSE loss
+**Figure 9:** Learning curve for rMSE loss
 
 We then decided to train using a root-mean-squared loss function, aiming to punish high errors more aggressively. Our results show that this change did not improve the prediction capability of the network greatly, see Figure X. 
 
 
 <img src="cited_images/tower_bad.png" height="400">
 
-**Figure:** Sample of data (including true final frame)
+**Figure 10:** Sample of data (including true final frame)
 
 
 <img src="cited_images/mse_bad.png" height="100">   <img src="cited_images/root_bad.png" height="100">
 
-**Figure:** Sample output (diffuse protein) using MSE loss (left) rMSE (right)
+**Figure 11:** Sample output (diffuse protein) using MSE loss (left) rMSE (right)
 
 
 
