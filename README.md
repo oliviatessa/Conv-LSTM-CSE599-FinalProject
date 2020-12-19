@@ -26,7 +26,16 @@ The data used in this project is part of a publicly available set of
 The images in were segmented using the SuperSegger[[2]](#2) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. 
 
 
-![Celltower1](example1.png)
+![Celltower1](cited_images/ftszexample.png)  *Fig. 1: FtsZ*   ![Celltower1](cited_images/example1.png) 
+
+ 
+![Celltower1](cited_images/example1.png)  ![Celltower2](cited_images/example2.png)
+
+
+<figure>
+  <img src="cited_images/example1.png" alt="Caption text">
+  <figcaption>Caption text</figcaption>
+</figure>
 
 
 ### Data Preprocessing
