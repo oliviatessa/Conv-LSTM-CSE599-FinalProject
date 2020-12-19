@@ -16,7 +16,6 @@ This can be seen clearly in Figure 1 below, which shows the average position of 
 As we see from Figure 1, there is distinct temporal structure in the average localization of a given protein throughout the cell cycle. However, those images above are the consensus images across an entire dataset of the same protein, so what we are interested in now is seeing if we can predict the dynamics of protein localization on a single-cell basis. 
 
 
-
 - show example of consensus time dependence, now interested in single cell stuff, which is why we are interested in doing this with neual networks
 - can we predict cell death? 
 - can we predict mutations? 
@@ -50,9 +49,9 @@ The ConvLSTM uses the same gating structure as a regular LSTM, but includes conv
 ## More detailed problem overview 
 
 ### Data 
+Our dataset is comprised of single-cell E.coli images where the protein of interest in each experiment has been marked with fluorescent tags.
+The images used were taken by the Wiggins lab in the physics department and is publicly avaialble here: http://mtshasta.phys.washington.edu/aska2/html/gene.html
 
-
-The data used in this project is part of a publicly available set of 
 
 The images in were segmented using the SuperSegger[[2]](#2) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. This software allows us to not only automatically segment the i   
 
