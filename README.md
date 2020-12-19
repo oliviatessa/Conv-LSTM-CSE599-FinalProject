@@ -11,18 +11,19 @@ It has been observed that the proteins within E.coli exhibit time dependent stru
 **Figure 1:** Demonstation of structured protein localization dynamics[[1]](#1)
 
 
-### Our Goal
-As we see from Figure 1, there is distinct temporal structure in the average localization of a given protein throughout the cell cycle. However, those images above are the consensus images across an entire dataset of the same protein, so what we are interested in now is seeing if we can predict the dynamics of protein localization on a single-cell basis. 
+### Frame Prediction of Single Cell images
+As we see from Figure 1, there is distinct temporal structure in the average localization of a given protein throughout the cell cycle. We are now interested in is seeing if we can predict the dynamics of protein localization on a single-cell basis. If successful, we could use this work to address some of the following questions:
+
+- Can we use localization dynamics to predict cell mutations or cell death? 
+- Which proteins are most indicative of cell health?
+- Can we quantify the trajectory of internal localization patterns given a specific gene mutation?
+- Can we predict the effects of viruses or antibiotics based on internal localization behavior. 
+
+### Our approach
+These are all potentially interesting problems, but due to the complexity inherent in biological data, the first step is to see if we can be successful in predicting frames in the simplest possible setting. In the following sections, we walk through the underlying architecture of our network and discuss how we processed the data to reduce the complexity of our problem as much as possible. As this is a brand new project in our research group, we have decided to "start small", increasing network size (and thereby model complexity) only when necessary and doing so with deliberate modifications that make interpetabilty reasonable.
 
 
-- show example of consensus time dependence, now interested in single cell stuff, which is why we are interested in doing this with neual networks
-- can we predict cell death? 
-- can we predict mutations? 
-- which protein dynamics are most indicative of cell health? 
-
-## what is next frame prediction, how does it work?
-
-### Background on ConvLSTM
+## Background on ConvLSTM
 
 The convolutional LSTM, first proposed in [1], uses convolutional operations instead of normal matrix operations in a LSTM recurrent network to capture both temporal and spatial dependencies in data. This algorithm has been used in video analysis, as well as in rainfall forecasting [1] and biological age prediction [[5]](#5). 
 
@@ -128,12 +129,12 @@ We then decided to train using a root-mean-squared loss function, aiming to puni
 
 **Figure 11:** Sample output (diffuse protein) using MSE loss (left) rMSE (right)
 
-
+As discussed previously, this project is in its earliest stages so it is not entirely unexpected that we did immediately succeed in producing a robust frame prediction. However, as seen in the learning curves, the model is, in fact, improving. This can be seen most obviously in the predicted images where the boarder is almost perfect. It seems that, despite our preprocessing, the network still captured information about cell size/shape more successfully than the internal dynamics. 
 
 
 ## Looking Forward
 
-It is clear that we will need to implement a somewhat more sophisticated network in conjunction with the ConvLSTM used in this project. The following are ideas we did not have time to implement for this project but will be the next steps in our research. 
+It is clear that we will need to implement a somewhat more sophisticated network in conjunction with the ConvLSTM used in this project.  The following are ideas we did not have time to implement for this project but will be the next steps in our research. 
 
 - Use a 3D convolution on all the outputs, rather than a 2D covolution on the last hidden state
 - Make prediction and compute cost for each step in sequence (e.g. for a total sequence length of 8, use first 7 as input and last 7 as 'labels')
