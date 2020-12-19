@@ -109,32 +109,25 @@ As the cell images are not oriented in any particular way
 ## Results
 
 
-<img src="cited_images/learncurve.png2" height="200">
+<img src="cited_images/learncurve.png2" height="400">
 
 **Figure:** Learning curve for MSE loss
 
 
-<img src="cited_images/learncurve_root.png" height="200">
+<img src="cited_images/learncurve_root.png" height="400">
 
 **Figure:** Learning curve for rMSE loss
 
 
 
-<img src="cited_images/tower_bad.png" height="200">
+<img src="cited_images/tower_bad.png" height="400">
 
 **Figure:** Sample of data (including true final frame)
 
 
-<img src="cited_images/mse_bad.png" height="200">
+<img src="cited_images/mse_bad.png" height="100">   <img src="cited_images/root_bad.png" height="100">
 
-**Figure:** Sample output (diffuse protein) using MSE loss
-
-
-
-<img src="cited_images/root_bad.png" height="200">
-
-**Figure:** Sample output (diffuse protein) using rMSE loss
-
+**Figure:** Sample output (diffuse protein) using MSE loss (left) rMSE (right)
 
 
 
