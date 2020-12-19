@@ -48,7 +48,7 @@ Do this to make it easier for network to learn the thing we actually care about,
 
 -normalizing the cell cycle (size of cell and number of stages in cycle)
 
-![SeggerExampleNorm](cited_images/xy01Cell0000416/Cell0000416_frame_1.png)
+![SeggerExampleNorm](cited_images/cyclenormaliztion.jpg)
 
 
 
@@ -56,12 +56,22 @@ Do this to make it easier for network to learn the thing we actually care about,
 Our final pre-processed data is comprised of samples each containg the padded images for each stage of the cell-cycle. More specifically, the input to the network is a pytorch tensor containing (bath_size, seq, channels, height, width)
 
 
-![SeggerExample](askadata3bN/.jpg)
-* Normalizing cell-cycle for better comparison [[1]](#1)*
+![finaldatafr1](aska1aN/xy01Cell0000416/Cell0000416_frame_1.png)
+* Final data*
 
 
 
 ## Our Network
+
+Hyperparameters
+- Batch size: 128
+- Number of Epochs: 
+
+- Training Samples:
+- Validation Samples:
+- Test Samples: 
+- Image augmentations: horizontal flip, vertical flip, both
+
 
 
 ## Results
