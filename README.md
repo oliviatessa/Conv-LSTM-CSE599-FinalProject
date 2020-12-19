@@ -41,7 +41,7 @@ Do this to make it easier for network to learn the thing we actually care about,
 
 -normalizing the cell cycle (size of cell and number of stages in cycle)
 
-![SeggerExample](cited_images/superseggerexample.jpg)
+![SeggerExampleNorm](cited_images/cyclenormalization.jpg)
 * Normalizing cell-cycle for better comparison [[1]](#1)*
 
 
