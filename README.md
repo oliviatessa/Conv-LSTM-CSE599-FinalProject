@@ -35,7 +35,7 @@ In this application, we adapt the pytorch convolutional LSTM implementation deve
 
 <img src="cited_images/conv.jpeg" height="400">
 
-**Figure 3:** Visualization of Convolutional Neural Network
+**Figure 3:** Visualization of Convolutional Neural Network [[4]](#4)
 
 
 The ConvLSTM uses the same gating structure as a regular LSTM, but includes convolutional operations rather than regular matrix operations. This feature allows the convolutional LSTM to learn both temporal and spatial relationships in the data. Figure 4 shows a visualization of the ConvLSTM, as well as the equations associated with calculations done in the cell state. Notice the equations are identitical to the regular LSTM equations show in Figure 3, except for the convolutional operations (denoted by *). 
@@ -67,7 +67,7 @@ The images in were segmented using the SuperSegger[[2]](#2) software created by 
 After all the segmentation, we get images such as the following.
 ![Celltower3](cited_images/ftszexample.png)  ![Celltower1](cited_images/example1.png)   ![Celltower2](cited_images/example2.png)
 
-Notice the difference in frame count (due to differences in lifespane) as well as the variance in shape and size. In this particular problem we are not interested in these parameters so we implement some data-preprocessing to eliminate these variables from the data.
+Notice the difference in frame count (due to differences in lifespane) as well as the variance in shape and size. In this particular problem we are not interested in these parameters so we implement some data-preprocessing to eliminate these variables from the data. 
 
 ### Data Preprocessing
 Within SuperSegger, there is a function that allows us to normalize the cell cycle as shown in Figure 7. This function allows us to standardize our dataset by mapping all cells to a standard cycle length with the same size for each step in the cycle. We apply this to all the cells in our data-set to eliminate the variance introduced by having cells of differing size, shape, and lifespan, thus allowing the network to "focus" on the internal dynamics of the cell. 
@@ -81,7 +81,10 @@ Within SuperSegger, there is a function that allows us to normalize the cell cyc
 ### Final Data used in network
 Our final pre-processed data is comprised of samples each containg the padded images for each stage of the cell-cycle. More specifically, the input to the network is a pytorch tensor containing (bath_size, seq, channels, height, width)
 
+Not every protein exhibits clearly defined spatial and/or temporal structure, (some are diffuse within the cellular cytoplasm), so we expect that samples of such proteins introduce noise to our dataset, and will be difficult to predict. Note that for the sake of time (and disk space) we have not run this over the entire dataset, but rather have selected a subset as a kind of ‘proof-of-concept’. We would expect that, given more data, our model would perform better as we are able to provide more examples of proteins with more clearly defined structure. 
+
 As the cell images are not oriented in any particular way after the segmentation, we can freely flip them verically or horizonatlly at each time step (as long as were consistent over a given cell) to generate more training data. This allows us to quadruple our data easily without having to preprocess additional training data. 
+
 
 ## Our Network
 
