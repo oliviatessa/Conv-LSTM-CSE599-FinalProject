@@ -28,6 +28,10 @@ Some of these proteins have been studied in detail, and it has been found that t
 
 ### Background on ConvLSTM
 
+The convolutional LSTM, first proposed in [1], uses convolutional operations instead of normal matrix operations in a LSTM recurrent network to capture both temporal and spatial dependencies in data. This algorithm has been used in video analysis, as well as in rainfall forecasting [1] and biological age prediction [Nature]. 
+
+In this application, we adapt the pytorch convolutional LSTM implementation developed by https://raw.githubusercontent.com/ndrplz/ConvLSTM_pytorch/master/convlstm.py (ndrplz) to analyze time-dependent cell lifecycles. 
+
 <img src="cited_images/lstm.jpeg" height="200">  <img src="cited_images/lstm_eqs.jpeg" height="150">     
 
 **Figure :** Visual Representation of LSTM and associated equaions
@@ -105,3 +109,10 @@ Kuwada, N.J., Traxler, B. and Wiggins, P.A. (2015), Protein localization dynamic
 <a id="1">[2]</a> 
 Stylianidou, S., Brennan, C., Nissen, S.B., Kuwada, N.J. and Wiggins, P.A. (2016), SuperSegger: robust image segmentation, analysis and lineage tracking of bacterial cells. Molecular Microbiology, 102: 690-700. https://doi.org/10.1111/mmi.13486
 
+https://papers.nips.cc/paper/2015/file/07563a3fe3bbe7e3ba84431ad9d055af-Paper.pdf
+
+https://medium.com/neuronio/an-introduction-to-convlstm-55c9025563a7
+
+https://www.nature.com/articles/s41598-019-46850-0
+
+https://raw.githubusercontent.com/ndrplz/ConvLSTM_pytorch/master/convlstm.py
