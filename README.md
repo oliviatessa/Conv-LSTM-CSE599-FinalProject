@@ -38,6 +38,8 @@ In this application, we adapt the pytorch convolutional LSTM implementation deve
 
 <img src="cited_images/conv.jpeg" height="400">
 
+The ConvLSTM uses the same gating structure as a regular LSTM, but includes convolutional operations rather than regular matrix operations. This feature allows the convolutional LSTM to learn both temporal and spatial relationships in the data. 
+
 **Figure :** Visualization of Convolutional Neural Network
 
 
