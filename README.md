@@ -6,6 +6,9 @@ CSE 599 Final Project - Olivia Thomas and Daniela Koch
 - Proteins in cells exhibit structure
 - Proteins are responsible for pretty much all cell processes, so knowing about their function
 
+It has been observed that the proteins within E.coliexhibit time dependent structure.  Some of these proteins have been studied in detail, and it has been found that the observed structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to thoseof proteins with known functions.
+
+
 ## what is next frame prediction, how does it work?
 
 ### Background on ConvLSTM
@@ -18,7 +21,7 @@ CSE 599 Final Project - Olivia Thomas and Daniela Koch
 
 The data used in this project is part of a publicly available set of 
 
-The images in were segmented using the SuperSegger[[1]](#1) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. 
+The images in were segmented using the SuperSegger[[2]](#2) software created by the Wiggins lab. The software and full documentation for the image segmentation can is publicly available and can be found here: https://github.com/wiggins-lab/SuperSegger/wiki. 
 
 
 ![Celltower1](example1.png)
@@ -33,5 +36,8 @@ Do this to make it easier for network to learn the thing we actually care about,
 
 ## References
 <a id="1">[1]</a> 
+Kuwada, N.J., Traxler, B. and Wiggins, P.A. (2015), Protein localization dynamics in bacteria. Molecular Microbiology, 95: 64-79. https://doi.org/10.1111/mmi.12841
+
+<a id="1">[2]</a> 
 Stylianidou, S., Brennan, C., Nissen, S.B., Kuwada, N.J. and Wiggins, P.A. (2016), SuperSegger: robust image segmentation, analysis and lineage tracking of bacterial cells. Molecular Microbiology, 102: 690-700. https://doi.org/10.1111/mmi.13486
 
