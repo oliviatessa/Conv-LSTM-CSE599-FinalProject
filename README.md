@@ -3,16 +3,15 @@ CSE 599 Final Project - Olivia Thomas and Daniela Koch
 
 ## Protein Localization Dynamics in E.coli
 
-It has been observed that the proteins within E.coli exhibit time dependent structure. Some of these proteins have been studied in detail, and it has been found that the observed temporal structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to those of proteins with known functions. 
-
-This can be seen clearly in Figure 1 below, which shows the average position of a protein
+It has been observed that the proteins within E.coli exhibit time dependent structure. Some of these proteins have been studied in detail, and it has been found that the observed temporal structure is directly related to their function within the cell. However, due to the vast number of protein types, we know relatively little about the functions of most proteins and it is difficult and time consuming to study them experimentally. Therefore, if we can find methods for predicting their function, we can help guide experimental work. Much of the work with regards to protein function prediction is in the realm of 'protein folding,' which recently made headlines with Google's new AlphaFold2 algorithm. However, there are other indicators for protein function, such as localization dynamics. For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to those of proteins with known functions. 
 
 
 <img src="cited_images/time_dependence_ex.jpg" height="200">  <img src="cited_images/time_dependence_ex copy.jpg" height="200">     
 
 **Figure 1:** Demonstation of structured protein localization dynamics[[1]](#1)
 
-### Our goal
+
+### Our Goal
 As we see from Figure 1, there is distinct temporal structure in the average localization of a given protein throughout the cell cycle. However, those images above are the consensus images across an entire dataset of the same protein, so what we are interested in now is seeing if we can predict the dynamics of protein localization on a single-cell basis. 
 
 
