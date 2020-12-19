@@ -3,11 +3,13 @@ CSE 599 Final Project - Olivia Thomas and Daniela Koch
 
 ## background on cell stuff
 
-- Proteins in cells exhibit structure
-- Proteins are responsible for pretty much all cell processes, so knowing about their function
+It has been observed that the proteins within E.coli exhibit time dependent structure.  Some of these proteins have been studied in detail, and it has been found that the observed structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to thoseof proteins with known functions.
 
-It has been observed that the proteins within E.coliexhibit time dependent structure.  Some of these proteins have been studied in detail, and it has been found that the observed structure is directly related to their function within the cell.  For example, the protein ftsZ can be found in highest concentrations at the middle of the cell, where it is responsible for the mechanics of cell division [[2]](#2).  We can gain intuition about proteins with unknown function by comparing their dynamical structure throughout the cell to thoseof proteins with known functions.
 
+- show example of consensus time dependence, now interested in single cell stuff, which is why we are interested in doing this with neual networks
+- can we predict cell death? 
+- can we predict mutations? 
+- which protein dynamics are most indicative of cell health? 
 
 ## what is next frame prediction, how does it work?
 
