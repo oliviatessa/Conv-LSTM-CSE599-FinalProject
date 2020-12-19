@@ -24,16 +24,21 @@ It has been observed that the proteins within E.coli exhibit time dependent stru
 
 ### Background on ConvLSTM
 
-<img src="cited_images/lstm.jpeg" height="200">  <img src="cited_images/lstm_eqs.jpeg" height="200">     
+<img src="cited_images/lstm.jpeg" height="200">  <img src="cited_images/lstm_eqs.jpeg" height="150">     
 
-**Figure :** 
+**Figure :** Visual Representation of LSTM and associated equaions
 
 <img src="cited_images/conv.jpeg" height="400">
 
-**Figure :** 
+**Figure :** Visualization of Convolutional Neural Network
 
 
-<img src="cited_images/convlstm.jpeg" height="400">  <img src="cited_images/convlstm_eqs.jpeg" height="180">
+<img src="cited_images/convlstm.jpeg" height="400">  
+
+**Figure :** Visual Representation of Convolution LSTM 
+
+
+<img src="cited_images/convlstm_eqs.jpeg" height="120">
 
 **Figure :** 
 
