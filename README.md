@@ -83,22 +83,74 @@ Do this to make it easier for network to learn the thing we actually care about,
 ### Final Data used in network
 Our final pre-processed data is comprised of samples each containg the padded images for each stage of the cell-cycle. More specifically, the input to the network is a pytorch tensor containing (bath_size, seq, channels, height, width)
 
-
+As the cell images are not oriented in any particular way 
 
 ## Our Network
 
-Hyperparameters
+**Hyperparameters:**
+
+| Layers     | 
+| -----------|
+| ReLU      | 
+| Batchnorm |    
+| ConvLSTM | 
+| 2d Conv |
+  
 - Batch size: 128
-- Number of Epochs: 
+- Number of Epochs: 120
+- Loss Function: Root-Mean-Squared-Error, implemented as torch.sqrt(nn.MSELoss()). We decided to use the square root of the MSE loss because our target pixel values were all between 0 and 1, and MSE penalty gets very small when the absolute value of the error is less than one.  
 
-- Training Samples:
-- Validation Samples:
-- Test Samples: 
-- Image augmentations: horizontal flip, vertical flip, both
-
+-Image augmentations: horizontal flip, vertical flip, both
+- Number of Samples = 24,000 (96,000 when including transformed images)
+- Test:Train split = 20:80 
+- Training set was further split into Validation:Train = 20:80 
 
 
 ## Results
+
+
+<img src="cited_images/learncurve.png2" height="200">
+
+**Figure:** Learning curve for MSE loss
+
+
+<img src="cited_images/learncurve_root.png" height="200">
+
+**Figure:** Learning curve for rMSE loss
+
+
+
+<img src="cited_images/tower_bad.png" height="200">
+
+**Figure:** Sample of data (including true final frame)
+
+
+<img src="cited_images/mse_bad.png" height="200">
+
+**Figure:** Sample output (diffuse protein) using MSE loss
+
+
+
+<img src="cited_images/root_bad.png" height="200">
+
+**Figure:** Sample output (diffuse protein) using rMSE loss
+
+
+
+
+
+## Looking Forward
+
+It is clear that we will need to implement a somewhat more sophisticated network in conjunction with the ConvLSTM used in this project. The following are ideas we did not have time to implement for this project but will be the next steps in our research. 
+
+- Use a 3D convolution on all the outputs, rather than a 2D covolution on the last hidden state
+- Make prediction and compute cost for each step in sequence (e.g. for a total sequence length of 8, use first 7 as input and last 7 as 'labels')
+- Implement a residual layer to avoid gradient vanishing
+- Build encoder and decoder using ConvLSTMcell (an example of this can be found here: https://towardsdatascience.com/video-prediction-using-convlstm-with-pytorch-lightning-27b195fd21a2)
+- Provide more input features, such as protein type and any known labels 
+
+
+
 
 
 ## References
