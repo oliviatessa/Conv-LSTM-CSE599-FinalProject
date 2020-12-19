@@ -110,7 +110,7 @@ As the cell images are not oriented in any particular way
 
 We used the mean-squared error and root-mean-squared error for the loss functions for two different experiments. The loss curves and a sample output are shown in Figure X for the mean-squared error experiment. The network is picking up on the most defined feature in the dataset, the outline of the cell. The more subtle features, such as the in the interior of the cell, are not learned by the network (See Figure (TOWER) for comparison). 
 
-<img src="cited_images/learncurve.png2" height="400">
+<img src="cited_images/learncurve2.png" height="400">
 
 **Figure:** Learning curve for MSE loss
 
